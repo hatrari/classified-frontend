@@ -7,7 +7,6 @@ export function OpenTrade({contract}) {
 
   const handleClick = async () => {
     let priceInWei = ethers.utils.parseEther(price);
-    console.log(parseInt(tokenId), parseInt(priceInWei))
     const tx = await contract.openTrade(
       parseInt(tokenId), parseInt(priceInWei));
     const receipt = await tx.wait();
